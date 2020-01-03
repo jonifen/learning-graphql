@@ -1,0 +1,13 @@
+{
+  "vehicles": [
+    { "id": "A1 AAA", "make": "Ford", "model": "Escort", "style": "Hatchback", "colour": "White" },
+    { "id": "B331 PLX", "make": "Ford", "model": "Sierra", "style": "Estate", "colour": "Blue" },
+    { "id": "R313 ABC", "make": "BMW", "model": "318i", "style": "Cabriolet", "colour": "Red" },
+    { "id": "PLG 339Y", "make": "Austin", "model": "Mini", "style": "Hatchback", "colour": "Black" },
+    { "id": "J123 ABC", "make": "Rover", "model": "Metro", "style": "Hatchback", "colour": "Red" }
+  ],
+  "salespersons": [
+    { "id": "1", "name": "John Smith", "sales": 0 },
+    { "id": "2", "name": "Sarah Jones", "sales": 1 }
+  ]
+}
