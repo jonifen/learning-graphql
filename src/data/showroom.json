@@ -1,13 +1,19 @@
 {
   "vehicles": [
-    { "id": "A1 AAA", "make": "Ford", "model": "Escort", "style": "Hatchback", "colour": "White" },
-    { "id": "B331 PLX", "make": "Ford", "model": "Sierra", "style": "Estate", "colour": "Blue" },
-    { "id": "R313 ABC", "make": "BMW", "model": "318i", "style": "Cabriolet", "colour": "Red" },
-    { "id": "PLG 339Y", "make": "Austin", "model": "Mini", "style": "Hatchback", "colour": "Black" },
-    { "id": "J123 ABC", "make": "Rover", "model": "Metro", "style": "Hatchback", "colour": "Red" }
+    { "id": "1", "registration": "A1 AAA", "make": "Ford", "model": "Escort", "style": "Hatchback", "colour": "White" },
+    { "id": "2", "registration": "B331 PLX", "make": "Ford", "model": "Sierra", "style": "Estate", "colour": "Blue" },
+    { "id": "3", "registration": "R313 ABC", "make": "BMW", "model": "318i", "style": "Cabriolet", "colour": "Red" },
+    { "id": "4", "registration": "PLG 339Y", "make": "Austin", "model": "Mini", "style": "Hatchback", "colour": "Black" },
+    { "id": "5", "registration": "J123 ABC", "make": "Rover", "model": "Metro", "style": "Hatchback", "colour": "Red" }
   ],
   "salespersons": [
-    { "id": "1", "name": "John Smith", "sales": 0 },
-    { "id": "2", "name": "Sarah Jones", "sales": 1 }
+    { "id": "1", "forenames": "John", "surname": "Smith" },
+    { "id": "2", "forenames": "Sarah", "surname": "Jones" }
+  ],
+  "sales": [
+    { "id": "1", "saleDateTime": "2020-01-03 16:30", "salesPersonId": "2", "customerId": "1", "vehicleId": "4", "salePrice": 1995 }
+  ],
+  "customers": [
+    { "id": "1", "forenames": "Jimmy", "surname": "James" }
   ]
 }

@@ -12,6 +12,27 @@ const VehicleType = new GraphQLObjectType({
   })
 });
 
+const SalesPersonType = new GraphQLObjectType({
+  name: "SalesPerson",
+  fields: () => ({
+    id: { type: GraphQLString },
+    forenames: { type: GraphQLString },
+    surname: { type: GraphQLString }
+  })
+});
+
+const SaleType = new GraphQLObjectType({
+  name: "Sale",
+  fields: () => ({
+    id: { type: GraphQLString },
+    saleDateTime: { type: GraphQLString },
+    salesPersonId: { type: GraphQLString },
+    customerId: { type: GraphQLString },
+    vehicleId: { type: GraphQLString },
+    salePrice: { type: GraphQLInt }
+  })
+});
+
 const ShowroomRootQuery = new GraphQLObjectType({
   name: "ShowroomRootQuery",
   fields: {
@@ -39,6 +60,36 @@ const ShowroomRootQuery = new GraphQLObjectType({
             }
           });
         })
+      }
+    },
+    salesperson: {
+      type: SalesPersonType,
+      args: {
+        id: { type: GraphQLString }
+      },
+      resolve(value, args) {
+        return axios.get(`http://localhost:3000/salespersons/${args.id}`).then(res => res.data);
+      }
+    },
+    salespersons: {
+      type: new GraphQLList(SalesPersonType),
+      resolve(value, args) {
+        return axios.get("http://localhost:3000/salespersons").then(res => res.data);
+      }
+    },
+    sale: {
+      type: SaleType,
+      args: {
+        id: { type: GraphQLString }
+      },
+      resolve(value, args) {
+        return axios.get(`http://localhost:3000/sales/${args.id}`).then(res => res.data);
+      }
+    },
+    sales: {
+      type: new GraphQLList(SaleType),
+      resolve(value, args) {
+        return axios.get("http://localhost:3000/sales").then(res => res.data);
       }
     }
   }
